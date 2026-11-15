@@ -60,13 +60,10 @@
       <h2 id="signup-h">Get the free Scam Shield guide</h2>
       <p>Scam Shield: 5 Ways to Spot an AI Scam. It is a short, large-print guide you can keep by the phone. Sign up and we will also send you one small, useful AI tip each week.</p>
 
-      <!-- TODO (Kit): Replace action="#" with the Kit form URL (e.g. https://app.kit.com/forms/XXXXXXX/subscriptions)
-           and method="post" once the Kit account exists. Field names "first_name" and "email_address" match Kit's defaults.
-           Then remove the JS "thanks" handler in the script at the bottom of this page, or let Kit redirect to a thank-you page. -->
-      <form id="signup-form" action="#" method="post" novalidate>
+      <form id="signup-form" action="https://app.kit.com/forms/10195072/subscriptions" method="post" data-uid="cb7c9a6c5c" novalidate>
         <div class="field">
           <label for="name">Your first name</label>
-          <input id="name" name="first_name" type="text" autocomplete="given-name" required>
+          <input id="name" name="fields[first_name]" type="text" autocomplete="given-name" required>
         </div>
         <div class="field">
           <label for="email">Your email address</label>
@@ -196,26 +193,78 @@
 </footer>
 
 <script>
-// Placeholder sign-up handler. TODO (Kit): when the form posts to Kit, remove this and the preventDefault.
 (function () {
   var form = document.getElementById('signup-form');
   var err = document.getElementById('form-error');
   var thanks = document.getElementById('thanks');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = form.elements.first_name.value.trim();
-    var email = form.elements.email_address.value.trim();
-    if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
-      err.textContent = !name ? 'Please type your first name.' : 'Please check your email address. It should look like name@example.com.';
-      err.hidden = false;
-      (!name ? form.elements.first_name : form.elements.email_address).focus();
-      return;
-    }
+  var nameInput = document.getElementById('name');
+  var emailInput = document.getElementById('email');
+  var button = form.querySelector('button[type="submit"]');
+  var kitUrl = 'https://app.kit.com/forms/10195072/subscriptions';
+  var friendlyError = 'Sorry, we could not sign you up just now. Please try again in a moment.';
+
+  function showError(message, focusEl) {
+    err.textContent = message;
+    err.hidden = false;
+    if (focusEl) focusEl.focus();
+  }
+
+  function showThanks(name) {
     err.hidden = true;
-    document.getElementById('thanks-name').textContent = name;
+    document.getElementById('thanks-name').textContent = name || 'friend';
     form.hidden = true;
     thanks.hidden = false;
     thanks.focus();
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = nameInput.value.trim();
+    var email = emailInput.value.trim();
+    if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
+      showError(!name ? 'Please type your first name.' : 'Please check your email address. It should look like name@example.com.', !name ? nameInput : emailInput);
+      return;
+    }
+
+    err.hidden = true;
+    if (button) button.disabled = true;
+
+    function fallbackPost() {
+      form.submit();
+    }
+
+    if (typeof fetch !== 'function') {
+      fallbackPost();
+      return;
+    }
+
+    fetch(kitUrl, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (res.ok) {
+        showThanks(name);
+        return;
+      }
+      return res.json().then(function (body) {
+        var msg = friendlyError;
+        if (body) {
+          if (typeof body.message === 'string' && body.message) msg = body.message;
+          else if (body.errors) {
+            if (typeof body.errors === 'string') msg = body.errors;
+            else if (Array.isArray(body.errors) && body.errors[0]) msg = String(body.errors[0]);
+          }
+        }
+        showError(msg, emailInput);
+        if (button) button.disabled = false;
+      }).catch(function () {
+        showError(friendlyError, emailInput);
+        if (button) button.disabled = false;
+      });
+    }).catch(function () {
+      fallbackPost();
+    });
   });
 })();
 </script>
