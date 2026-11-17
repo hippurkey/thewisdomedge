@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your AI Scam Shield Guide is ready | The Wisdom Edge</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b2447">
+<link rel="icon" href="../../favicon.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="ss">
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="../../" aria-label="The Wisdom Edge, home">
+      <img src="../../assets/logo-small.jpg" width="48" height="48" alt="">
+      <span>The Wisdom Edge</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="../../">Home</a>
+      <a class="nav-cta" href="#download">Download the guide</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero ss-hero ss-thanks" aria-labelledby="thanks-h">
+  <div class="wrap narrow center">
+    <p class="eyebrow">You&rsquo;re all set</p>
+    <h1 id="thanks-h">Thank you<span id="thanks-name"></span>!</h1>
+    <p class="lead">Your free copy of The AI Scam Shield Guide is ready.</p>
+
+    <div class="card ss-download" id="download">
+      <img class="ss-cover-sm" src="../../img/scam-shield/guide-cover.jpg" width="600" height="776" alt="Cover of The AI Scam Shield Guide.">
+      <p><a class="btn btn-block" href="../../downloads/ai-scam-shield-guide.pdf" download="The-AI-Scam-Shield-Guide.pdf">Download the guide</a></p>
+      <p class="small">A PDF file, 17 large-print pages, about 1 MB.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ss-next" aria-labelledby="next-h">
+  <div class="wrap narrow">
+    <div class="ss-confirm" id="confirm-step">
+      <h2 id="next-h">One more small step</h2>
+      <p>We just sent you an email from The Wisdom Edge. Please open it and click the button to confirm your address. That way your weekly tips can reach you.</p>
+      <p>Don&rsquo;t see it in a few minutes? Look in your spam or promotions folder.</p>
+    </div>
+    <div class="ss-confirm ss-confirmed" id="confirmed-step" hidden>
+      <h2>Your email is confirmed</h2>
+      <p>Thank you. Your first weekly tip will arrive soon. You can download your guide any time from this page.</p>
+    </div>
+
+    <h2>How to use your guide</h2>
+    <ol class="steps">
+      <li><span class="step-n" aria-hidden="true">1</span><div><h3>Open it</h3><p>Tap or click the button above. On most phones and computers, the guide opens right away. You can save it from there.</p></div></li>
+      <li><span class="step-n" aria-hidden="true">2</span><div><h3>Print the checklist</h3><p>Page 13 is a checklist to keep by the phone. Print just that page, or the whole guide.</p></div></li>
+      <li><span class="step-n" aria-hidden="true">3</span><div><h3>Share it with your family</h3><p>Talk about a family safe word together. Page 11 shows you how.</p></div></li>
+    </ol>
+    <p>Questions or trouble with the download? Email <a href="mailto:support@thewisdomedge.com">support@thewisdomedge.com</a> and I&rsquo;ll help.</p>
+    <p class="signoff">Warmly,<br><span>Glenn Lee</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="../../assets/logo-small.jpg" width="72" height="72" alt="The Wisdom Edge badge">
+      <p><strong>The Wisdom Edge</strong><br>Your wisdom, supercharged. Your memories, preserved.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../">Visit our home page</a></li>
+      <li>Questions? Email <a href="mailto:support@thewisdomedge.com">support@thewisdomedge.com</a></li>
+    </ul>
+    <p class="privacy"><strong>Privacy:</strong> We never sell or share your information. Unsubscribe anytime.</p>
+    <p class="small light">The Wisdom Edge is an independent education brand. We are not affiliated with or endorsed by xAI, X, the FTC, the FBI, or AARP. Information here is for learning and is not legal, financial, or medical advice.</p>
+    <p class="small light">&copy; 2026 The Wisdom Edge. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Kit's confirmation email can send people back here with ?confirmed=1
+  if (/[?&]confirmed=1\b/.test(window.location.search)) {
+    document.getElementById('confirm-step').hidden = true;
+    document.getElementById('confirmed-step').hidden = false;
+  }
+  var name = '';
+  try { name = sessionStorage.getItem('ss_first_name') || ''; } catch (e) {}
+  if (name) document.getElementById('thanks-name').textContent = ', ' + name;
+})();
+</script>
+</body>
+</html>

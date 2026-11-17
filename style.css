@@ -142,3 +142,40 @@ input:focus{outline:4px solid var(--gold);outline-offset:2px}
   .topbar nav .nav-cta{padding:10px 14px;font-size:1rem}
 }
 section[id]{scroll-margin-top:84px}
+
+/* ===== AI Scam Shield landing + thank-you pages ===== */
+.ss-hero{padding:48px 0 56px}
+.ss-hero-in{display:grid;grid-template-columns:1fr 460px;gap:48px;align-items:start}
+.ss-hero h1{font-size:clamp(2.3rem,5vw,3.4rem)}
+.ss-cover{margin:8px 0 0;max-width:340px}
+.ss-cover img,.ss-page img,.ss-cover-sm{border:4px double var(--gold);border-radius:6px;box-shadow:0 10px 26px rgba(11,36,71,.22);background:#fff}
+.ss-form-card h2{font-size:clamp(1.8rem,3.4vw,2.2rem)}
+.optional{font-weight:normal;color:#444;font-size:1.05rem}
+.ss-privacy{margin-top:1em;font-weight:bold;color:var(--navy)}
+.ss-inside{background:var(--cream)}
+.ss-list li{line-height:1.55}
+.ss-peek{background:var(--parch)}
+.ss-page{margin:0}
+.ss-peek-in{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:center}
+.ss-fact{background:#fff;border-left:8px solid var(--navy);border-radius:8px;padding:16px 20px;margin-top:1.4em}
+.ss-peek .source{font-size:1.05rem;color:#333}
+.ss-about{background:var(--cream)}
+.ss-bio{display:flex;gap:24px;align-items:flex-start;background:#fff;border:2px solid #d9cca8;border-top:6px solid var(--gold);border-radius:10px;padding:28px;margin-bottom:2rem}
+.ss-bio img{border-radius:50%;border:2px solid var(--gold);flex:none}
+.ss-bio p:last-child{margin-bottom:0}
+.ss-thanks .card{max-width:460px;margin:24px auto 0;text-align:center}
+.ss-cover-sm{width:220px;margin:0 auto 24px}
+.ss-next{background:var(--cream)}
+.ss-confirm{background:#eef5ea;border:3px solid #2f6b3a;border-radius:10px;padding:24px 28px;margin-bottom:2.5rem}
+.ss-confirm h2{color:#1f4d29;font-size:1.8rem}
+.ss-confirm p:last-child{margin-bottom:0}
+@media (max-width:820px){
+  body.ss{font-size:1.25rem}
+  .ss-hero{padding:32px 0 40px}
+  .ss-hero-in,.ss-peek-in{grid-template-columns:1fr;gap:28px}
+  .ss-hero-text{text-align:center}
+  .ss-cover{max-width:240px;margin:0 auto}
+  .ss-page{max-width:300px;margin:0 auto}
+  .ss-bio{flex-direction:column;align-items:center;text-align:center;padding:24px 20px}
+  .ss-confirm{padding:20px}
+}
