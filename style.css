@@ -163,6 +163,7 @@ section[id]{scroll-margin-top:84px}
 .ss-bio{display:flex;gap:24px;align-items:flex-start;background:#fff;border:2px solid #d9cca8;border-top:6px solid var(--gold);border-radius:10px;padding:28px;margin-bottom:2rem}
 .ss-bio img{border-radius:50%;border:2px solid var(--gold);flex:none}
 .ss-bio p:last-child{margin-bottom:0}
+.ss-bio p{font-size:22px;line-height:1.6}
 .ss-thanks .card{max-width:460px;margin:24px auto 0;text-align:center}
 .ss-cover-sm{width:220px;margin:0 auto 24px}
 .ss-next{background:var(--cream)}
