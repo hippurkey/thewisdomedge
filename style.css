@@ -97,11 +97,22 @@ input:focus{outline:4px solid var(--gold);outline-offset:2px}
 .grok{background:var(--cream)}
 .grok .narrow{border-left:6px solid var(--gold);padding-left:28px}
 
-.guide{background:var(--burg);color:#fff;text-align:center}
+.guide{background:var(--burg);color:#fff}
 .guide h2{color:#fff}
+.guide-in{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:center;max-width:900px;margin:0 auto}
+.guide-cover{margin:0;max-width:240px}
+.guide-cover img{width:100%;height:auto;border:4px double var(--gold);border-radius:6px;box-shadow:0 10px 26px rgba(0,0,0,.28);background:#fff}
+.guide-text .price{margin:1.1em 0 .35em}
 .price{margin:1.2em 0 .3em}
 .price-now{font-size:3.2rem;font-weight:bold;color:var(--gold-l);line-height:1}
-.price-note{display:block;font-size:1.15rem;font-style:italic}
+.price-note{display:block;font-size:1.15rem;font-style:italic;margin-top:.25em}
+.guide a{color:var(--gold-l)}
+.guide a:hover{color:#fff}
+.guide .btn-gold{color:var(--navy)}
+.guide .btn-gold:hover{color:var(--navy)}
+.guide-reassure{list-style:none;padding:0;margin:1.2em 0 0;font-size:1.05rem;line-height:1.5}
+.guide-reassure li{margin:0 0 .45em}
+.guide-alt{margin:1.3em 0 0}
 
 .promise{background:var(--cream)}
 .promise-list{list-style:none;padding:0;margin:0 0 1.5rem}
@@ -132,6 +143,8 @@ input:focus{outline:4px solid var(--gold);outline-offset:2px}
   .brand{font-size:1.15rem}
   .grok .narrow{padding-left:18px}
   section{padding:48px 0}
+  .guide-in{grid-template-columns:1fr;text-align:center;justify-items:center;gap:24px}
+  .guide-cover{margin:0 auto;max-width:200px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .nav-cta{white-space:nowrap}
