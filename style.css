@@ -271,3 +271,9 @@ body.course [id]{scroll-margin-top:84px}
   body.course .footer a{color:var(--navy)}
   .course-article, .course-hero, .course-how, .course-lessons, .course-checks, .course-signoff{background:#fff;padding:16px 0}
 }
+
+.ss-welcome{margin:0 0 2.2rem}
+.ss-welcome h2{margin-top:1.5em}
+.ss-welcome h2:first-child{margin-top:0}
+.ss-welcome .ss-fact{margin-top:.5em}
+.ss-welcome .ss-fact p:last-child{margin-bottom:0}
